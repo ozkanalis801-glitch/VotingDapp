@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blockchain Oylama Sistemi</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <div class="badge">Sepolia Test Ağı</div>
+      <h1>Blockchain Oylama Sistemi</h1>
+      <p>
+        MetaMask ile bağlan, adayları görüntüle ve oyunu güvenli şekilde blockchain’e kaydet.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="card wallet-card">
+        <h2>Cüzdan Bağlantısı</h2>
+
+        <button id="connectButton" class="primary-btn">
+          MetaMask Bağla
+        </button>
+
+        <div class="info-box">
+          <p id="walletAddress">Cüzdan bağlı değil</p>
+          <p id="networkInfo">Ağ kontrol edilmedi</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-header">
+          <h2>Adaylar</h2>
+          <button id="refreshButton" class="secondary-btn">
+            Sonuçları Yenile
+          </button>
+        </div>
+
+        <div id="candidatesList" class="candidates-grid">
+          Adaylar henüz yüklenmedi.
+        </div>
+      </div>
+
+      <div class="card vote-card">
+        <h2>Oy Ver</h2>
+
+        <p class="small-text">
+          Oy vermek istediğin adayın ID numarasını gir. Her cüzdan yalnızca bir kez oy kullanabilir.
+        </p>
+
+        <div class="vote-form">
+          <input type="number" id="candidateInput" placeholder="Aday ID gir: 1, 2 veya 3" />
+          <button id="voteButton" class="primary-btn">
+            Oy Ver
+          </button>
+        </div>
+
+        <p id="status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
